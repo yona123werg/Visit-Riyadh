@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Visit Riyadh</title>
+    <link rel="shortcut icon" href="قلب الرياض.jpg" type="image/x-icon"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+<form id="uploadForm" action="upload.php" enctype="multipart/form-data">
+    <input type="file" name="image" id="image" accept="image/*" required><br>
+    <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter description..." required></textarea><br>
+    <select name="category" id="category" required>
+        <option value="">Select Category</option>
+        <option value="Restaurants">Restaurants</option>
+        <option value="Heritage and Culture">Heritage and Culture</option>
+        <option value="Markets">Markets</option>
+        <option value="Events and Experiences">Events and Experiences</option>
+        <option value="Hotels and Resorts">Hotels and Resorts</option>
+    </select><br>
+    <button type="submit">Upload Image</button>
+</form>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+            alert('Image uploaded successfully');
+            // Reset form
+            document.getElementById('uploadForm').reset();
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+            alert('Failed to upload image');
+        });
+    });
+</script>
+</body>
+</html>
