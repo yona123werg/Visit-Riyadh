@@ -1,145 +1,120 @@
-/* 1. إعدادات الصفحة العامة */
+/* إعدادات عامة */
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #fde4bae5;
     color: #1b1811;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    direction: rtl; /* لضمان اتجاه النص العربي */
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    overflow-x: hidden; /* لمنع ظهور شريط تمرير عرضي بسبب الحركة */
 }
 
-/* 2. الهيدر والقائمة العلوية */
+/* هيدر ذكي ومستجيب */
 header {
     background-color: #f2cf7c;
-    padding: 15px 5%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* يسمح للعناصر بالنزول تحت بعض في الجوال */
+    justify-content: space-between;
     align-items: center;
 }
 
 #logl {
-    max-height: 80px;
+    height: 60px; /* تصغير اللوجو قليلاً ليعطي مساحة */
     width: auto;
-    margin-bottom: 10px;
+}
+
+nav {
+    width: 100%; /* في الجوال ستأخذ القائمة عرض كامل */
+    text-align: center;
+    margin-top: 10px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 5px 10px;
 }
 
 nav ul li a {
     color: #292974;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s;
+    font-size: 0.9rem;
 }
 
-nav ul li a:hover {
-    color: #ffffff;
-}
-
-/* 3. البطاقة التعريفية (Main Card) */
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    margin: 40px auto;
-    padding: 30px;
-    max-width: 80%;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    gap: 30px;
-}
-
-.image-container img {
-    max-width: 300px;
-    border-radius: 15px;
-}
-
-/* 4. معرض الصور (Grid) */
-.icon {
-    font-size: 2rem;
-    color: #573406;
-    margin: 40px 0 20px;
+/* حركة الصور (Marquee Effect) */
+.gallery-wrapper {
+    overflow: hidden; /* يخفي الصور الخارجة عن الإطار */
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 5%;
-    margin-bottom: 50px;
+    display: flex;
+    gap: 15px;
+    width: max-content; /* يجعل العرض على قد الصور تماماً */
+    animation: marquee 20s linear infinite; /* تشغيل الحركة */
 }
 
-.imgy {
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.gallery:hover {
+    animation-play-state: paused; /* توقف الحركة عند وضع الماوس */
 }
 
 .imgy img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover; /* لقص الصور بشكل متساوي */
-    transition: transform 0.5s ease;
-    display: block;
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.imgy img:hover {
-    transform: scale(1.1); /* تأثير الزووم عند المرور */
+/* تعريف الحركة */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); } /* التحريك لليمين لأن الموقع عربي */
 }
 
-/* 5. تذييل الصفحة (Footer) */
-.site-footer {
-    background-color: #26272b;
-    color: #bbb;
-    padding: 40px 5%;
-    text-align: center;
+/* البطاقة التعريفية */
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 90%;
+    border-radius: 15px;
+    gap: 20px;
 }
 
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #f2cf7c;
-}
-
-/* 6. التوافق مع الشاشات الصغيرة (Mobile Friendly) */
+/* تحسينات الجوال */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column; /* ترتيب العناصر عمودياً */
+        padding: 10px;
+    }
+    
     .card {
         flex-direction: column;
         text-align: center;
     }
     
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    
     .image-container img {
         max-width: 100%;
+    }
+
+    nav ul li {
+        margin: 5px;
     }
 }
