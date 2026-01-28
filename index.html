@@ -1,91 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Riyadh | قلب الرياض</title>
-    
-    <link rel="shortcut icon" href="قلب الرياض.jpg" type="image/x-icon"/>
-    
-    <link rel="stylesheet" type="text/css" href="home.css">
-    
+    <title>Visit Riyadh</title>
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="header-top">
         <img id="logl" src="قلب الرياض.png" alt="Logo">
-        
-        <div class="language-selector">
-            <h3 class="text-primary">أختر اللغة</h3>
-            <select class="p-1">
-                <option value="ar" selected>العربية</option>
-                <option value="en">English</option>
+        <div class="lang">
+            <select>
+                <option>العربية</option>
+                <option>English</option>
             </select>
         </div>
-        
-        <h1>هنا قلب الرياض</h1>
-        
-        <nav>
-            <ul>
-                <li><a href="فنادق ومنتجعات.html">فنادق ومنتجعات</a></li>
-                <li><a href="مطاعم.html">مطاعم</a></li>
-                <li><a href="أسواق.html">أسواق</a></li>
-                <li><a href="الثقافه والتراث.html">الثقافة والتراث</a></li>
-                <li><a href="الفعاليات والتجارب.html">الفعاليات</a></li>
-                <li><a href="admin.html"><i class="fa-solid fa-lock"></i></a></li>
-                <li><a href="sign.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="card">
-            <div class="image-container">
-                <img src="الرياض.png" alt="Riyadh Image">
-            </div>
-            <div class="content">
-                <p>
-                    استكشف جمال العاصمة السعودية، الرياض، مع موقعنا السياحي الاستثنائي. <br>
-                    اكتشف تاريخها العريق في متاحفها والمواقع الأثرية، <br>
-                    استمتع بالضيافة العربية الأصيلة في فنادق فاخرة، <br>
-                    تسوق في أسواقها التقليدية، وتذوق أطباقها الشهية.
-                </p>
-            </div>
-        </div>
-        
-        <h2 class="icon">الأماكن الأكثر شهرة</h2>
-
-<div class="gallery-wrapper">
-    <div class="gallery">
-        <div class="imgy"><a href="الثقافه والتراث.html"><img src="البجيري.jpg"></a></div>
-        <div class="imgy"><a href="الفعاليات والتجارب.html"><img src="البلفورد الوورد.jpg"></a></div>
-        <div class="imgy"><a href="الفعاليات والتجارب.html"><img src="ونتر لاند.jpg"></a></div>
-        <div class="imgy"><a href="مطاعم.html"><img src="القريه النجديه.jpg"></a></div>
-        <div class="imgy"><a href="فنادق ومنتجعات.html"><img src="سانت ريجيس.jpg"></a></div>
-        <div class="imgy"><a href="أسواق.html"><img src="Al Faisaliyah Mall.jpeg"></a></div>
-        <div class="imgy"><a href="الثقافه والتراث.html"><img src="البجيري.jpg"></a></div>
-        <div class="imgy"><a href="الفعاليات والتجارب.html"><img src="البلفورد الوورد.jpg"></a></div>
     </div>
-</div>
-    </main>
+    <nav>
+        <ul>
+            <li><a href="فنادق ومنتجعات.html">فنادق</a></li>
+            <li><a href="مطاعم.html">مطاعم</a></li>
+            <li><a href="أسواق.html">أسواق</a></li>
+            <li><a href="الثقافه والتراث.html">التراث</a></li>
+            <li><a href="الفعاليات والتجارب.html">الفعاليات</a></li>
+            <li><a href="sign.html"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+    </nav>
+</header>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <h6>وصف الموقع</h6>
-            <p>موقع سياحي للرياض يجمع بين التاريخ العريق والحداثة العصرية في قلب المملكة العربية السعودية.</p>
+<main>
+    <h2 style="text-align: center; margin-top: 30px;">الأماكن الأكثر شهرة</h2>
+    <div class="gallery-container">
+        <div class="gallery-scroll">
+            <div class="imgy"><img src="البجيري.jpg"></div>
+            <div class="imgy"><img src="البلفورد الوورد.jpg"></div>
+            <div class="imgy"><img src="ونتر لاند.jpg"></div>
+            <div class="imgy"><img src="القريه النجديه.jpg"></div>
+            <div class="imgy"><img src="سانت ريجيس.jpg"></div>
+            <div class="imgy"><img src="Al Faisaliyah Mall.jpeg"></div>
+            <div class="imgy"><img src="البجيري.jpg"></div>
+            <div class="imgy"><img src="البلفورد الوورد.jpg"></div>
         </div>
-        <div class="social-icons">
-            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p style="margin-top: 15px; font-size: 12px;">© 2026 جميع الحقوق محفوظة</p>
-    </footer>
+    </div>
 
-    <script src="script.js" type="module"></script>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <section class="weather-section">
+        <div class="elfsight-app-db30d82f-5f83-41c1-932f-8082c33174fe" data-elfsight-app-lazy></div>
+    </section>
+</main>
+
+<footer class="site-footer" style="background: #26272b; color: white; padding: 20px; text-align: center;">
+    <p>جميع الحقوق محفوظة - قلب الرياض 2026</p>
+</footer>
+
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<script src="script.js" type="module"></script>
 </body>
 </html>
-
