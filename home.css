@@ -1,85 +1,131 @@
-/* أساسيات */
+/* =========================================
+   1. إعدادات الصفحة الأساسية
+   ========================================= */
 body {
     margin: 0;
     padding: 0;
     background-color: #fde4bae5;
-    direction: rtl;
-    overflow-x: hidden;
-    font-family: sans-serif;
+    color: #1b1811;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* يمنع ظهور شريط التمرير العرضي */
 }
 
-/* حل مشكلة الهيدر في الجوال */
-.main-header {
+/* =========================================
+   2. الهيدر (القائمة العلوية) - مرن ومتجاوب
+   ========================================= */
+header {
     background-color: #f2cf7c;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
     z-index: 9999;
 }
 
-.header-container {
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-#logl { height: 50px; width: auto; }
+#logl {
+    height: 60px;
+    width: auto;
+}
 
-.main-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.lang-selector select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* القائمة */
+nav ul {
     list-style: none;
     padding: 0;
     margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.main-nav li { margin: 5px 10px; }
-.main-nav a { text-decoration: none; color: #292974; font-weight: bold; font-size: 14px; }
+nav ul li {
+    margin: 5px 15px;
+}
 
-/* حل مشكلة حركة الصور */
-.marquee-wrapper {
+nav ul li a {
+    color: #292974;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   3. حاوية حركة الصور (Marquee)
+   ========================================= */
+.gallery-container {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
+    margin: 20px 0;
+    position: relative;
+    /* نثبت الاتجاه هنا لضمان عمل الأنميشن حتى لو تغيرت لغة الموقع */
+    direction: ltr !important; 
 }
 
-.marquee-content {
+.gallery-scroll {
     display: flex;
     width: max-content;
-    animation: scroll-right 30s linear infinite;
+    animation: marquee-scroll 35s linear infinite;
+}
+
+/* توقف الحركة عند مرور الماوس */
+.gallery-scroll:hover {
+    animation-play-state: paused;
+}
+
+.imgy {
+    padding: 0 15px;
 }
 
 .imgy img {
-    width: 250px;
-    height: 180px;
+    width: 280px;
+    height: 200px;
     object-fit: cover;
-    margin: 0 10px;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-@keyframes scroll-right {
+.imgy img:hover {
+    transform: scale(1.05);
+}
+
+/* الأنميشن الخاص بالحركة المستمرة */
+@keyframes marquee-scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(50%); }
+    100% { transform: translateX(-50%); }
 }
 
-/* الطقس */
-.weather-box {
-    padding: 20px;
-    min-height: 150px; /* لضمان ظهور المساحة حتى لو تأخر التحميل */
-}
-
-/* إعدادات الجوال (المنقذة) */
-@media (max-width: 600px) {
-    .main-header {
-        position: relative; /* إلغاء التثبيت في الجوال لمنع تغطية الصور */
-    }
-    .header-container {
-        flex-direction: column;
-    }
-    .main-nav li { margin: 5px; }
-}
+/* =========================================
+   4. البطاقة التعريفية (Main Card)
+   ========================================= */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    margin: 40px auto;
+    padding: 25px;
+    max-width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.
