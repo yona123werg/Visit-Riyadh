@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* هيدر متجاوب ومريح للجوال */
+/* هيدر ذكي: لا يغطي المحتوى في الجوال */
 header {
     background-color: #f2cf7c;
     padding: 10px 20px;
@@ -22,10 +22,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* للسماح بالعناصر بالنزول في الجوال */
 }
 
 #logl {
-    height: 60px;
+    height: 50px;
     width: auto;
 }
 
@@ -34,66 +35,71 @@ nav ul {
     padding: 0;
     margin: 10px 0 0;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* لترتيب الروابط في الجوال */
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 5px 8px;
+    margin: 5px 10px;
 }
 
 nav ul li a {
     color: #292974;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
-/* حركة الصور (Marquee) - تم الإصلاح */
+/* إصلاح حركة الصور (Marquee) */
 .gallery-container {
     width: 100%;
     overflow: hidden;
-    background: white;
+    background: rgba(255, 255, 255, 0.5);
     padding: 20px 0;
     margin: 20px 0;
-    white-space: nowrap; /* مهم جداً لبقاء الصور في سطر واحد */
+    white-space: nowrap;
+    position: relative;
 }
 
 .gallery-scroll {
     display: inline-block;
-    animation: marquee 25s linear infinite;
+    /* الحركة تبدأ من 0 وتنتهي عند -50% لضمان الاستمرارية */
+    animation: marquee 20s linear infinite;
 }
 
 .imgy {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .imgy img {
     width: 250px;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 12px;
-    transition: 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.imgy img:hover {
-    transform: scale(1.05);
-}
-
+/* تعديل اتجاه الأنميشن ليتناسب مع RTL */
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(50%); } /* التحريك لليمين */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); } 
 }
 
-/* قسم الطقس */
-.weather-section {
-    max-width: 90%;
-    margin: 20px auto;
-}
-
-/* تحسينات الجوال */
+/* تحسينات الجوال القصوى */
 @media (max-width: 768px) {
-    header { position: relative; } /* منعه من تغطية المحتوى في الشاشات الصغيرة جداً */
-    nav ul li { margin: 3px; }
-    nav ul li a { font-size: 0.75rem; }
+    header {
+        position: static; /* إلغاء التثبيت في الجوال إذا كان يضايق المستخدم */
+    }
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul li {
+        margin: 5px;
+    }
+    nav ul li a {
+        font-size: 0.8rem;
+    }
 }
