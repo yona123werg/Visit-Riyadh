@@ -1,217 +1,98 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <title>Visit Riyadh | قلب الرياض</title>
-    <link rel="shortcut icon" href="قلب الرياض.jpg" type="image/x-icon"/>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Riyadh | قلب الرياض</title>
+    
+    <link rel="shortcut icon" href="قلب الرياض.jpg" type="image/x-icon"/>
     
     <link rel="stylesheet" type="text/css" href="home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <style>
-        /* تصحيح التنسيقات العامة */
-        body {
-            color: #1b1811;
-            background-color: #fde4bae5;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط أوضح */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #f2cf7c;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: sticky; /* جعل القائمة ثابتة عند التمرير */
-            top: 0;
-            z-index: 1000;
-        }
-
-        #logl {
-            float: right; /* تعديل اللوجو لليمين ليتناسب مع العربي */
-            margin-left: 20px;
-        }
-
-        .text-primary, .p-1 {
-            float: left; /* اختيار اللغة لليسار */
-            margin: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-            clear: both;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #292974;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ffffff;
-            background-color: #292974;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* تنسيق قسم البطاقة التعريفية */
-        .card {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            background: white;
-            margin: 20px auto;
-            max-width: 900px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* تنسيق معرض الصور (الأماكن الأكثر شهرة) */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-
-        .imgy img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover; /* لتوحيد أحجام الصور بدون تمطيط */
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .imgy img:hover {
-            transform: scale(1.05); /* تأثير التكبير عند المرور */
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: #573406;
-            margin-top: 40px;
-        }
-
-        /* تذييل الصفحة */
-        .site-footer {
-            background-color: #26272b;
-            padding: 40px 0;
-            color: #737373;
-            margin-top: 50px;
-        }
-
-        .social-icons a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        /* تحسينات الجوال */
-        @media (max-width: 768px) {
-            .card { flex-direction: column; text-align: center; }
-            nav ul li { display: block; margin: 10px 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <img id="logl" src="قلب الرياض.png" width="80" height="80" alt="Logo">
-    
-    <div style="float: left;">
-        <select class="p-1">
-            <option value="ar" selected>العربية</option>
-            <option value="en">English</option>
-        </select>
-    </div>
-    
-    <h1>هنا قلب الرياض</h1>
-    
-    <nav>
-        <ul>
-            <li><a href="فنادق ومنتجعات.html">فنادق ومنتجعات</a></li>
-            <li><a href="مطاعم.html">مطاعم</a></li>
-            <li><a href="أسواق.html">أسواق</a></li>
-            <li><a href="الثقافه والتراث.html">الثقافة والتراث</a></li>
-            <li><a href="الفعاليات والتجارب.html">الفعاليات</a></li>
-            <li><a href="sign.html"><i class="fa-solid fa-user"></i></a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <img id="logl" src="قلب الرياض.png" alt="Logo">
+        
+        <div class="language-selector">
+            <h3 class="text-primary">أختر اللغة</h3>
+            <select class="p-1">
+                <option value="ar" selected>العربية</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+        
+        <h1>هنا قلب الرياض</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="فنادق ومنتجعات.html">فنادق ومنتجعات</a></li>
+                <li><a href="مطاعم.html">مطاعم</a></li>
+                <li><a href="أسواق.html">أسواق</a></li>
+                <li><a href="الثقافه والتراث.html">الثقافة والتراث</a></li>
+                <li><a href="الفعاليات والتجارب.html">الفعاليات</a></li>
+                <li><a href="admin.html"><i class="fa-solid fa-lock"></i></a></li>
+                <li><a href="sign.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <div class="card">
-        <div class="image-container">
-            <img src="الرياض.png" alt="Riyadh">
+    <main>
+        <div class="card">
+            <div class="image-container">
+                <img src="الرياض.png" alt="Riyadh Image">
+            </div>
+            <div class="content">
+                <p>
+                    استكشف جمال العاصمة السعودية، الرياض، مع موقعنا السياحي الاستثنائي. <br>
+                    اكتشف تاريخها العريق في متاحفها والمواقع الأثرية، <br>
+                    استمتع بالضيافة العربية الأصيلة في فنادق فاخرة، <br>
+                    تسوق في أسواقها التقليدية، وتذوق أطباقها الشهية.
+                </p>
+            </div>
         </div>
-        <div class="content-text" style="padding: 20px;">
-            <p>
-                استكشف جمال العاصمة السعودية، الرياض، مع موقعنا السياحي الاستثنائي. <br>
-                اكتشف تاريخها العريق في متاحفها والمواقع الأثرية، <br>
-                استمتع بالضيافة العربية الأصيلة في فنادق فاخرة، وتذوق أطباقها الشهية.
-            </p>
-        </div>
-    </div>
+        
+        <h2 class="icon">الأماكن الأكثر شهرة</h2>
 
-    <h2 class="icon">الاماكن الأكثر شهرة</h2>
+        <div class="gallery">
+            <div class="imgy">
+                <a href="الثقافه والتراث.html"><img src="البجيري.jpg" alt="البجيري"></a>
+            </div>
+            <div class="imgy">
+                <a href="الفعاليات والتجارب.html"><img src="البلفورد الوورد.jpg" alt="البوليفارد"></a>
+            </div>
+            <div class="imgy">
+                <a href="الفعاليات والتجارب.html"><img src="ونتر لاند.jpg" alt="ونتر لاند"></a>
+            </div>
+            <div class="imgy">
+                <a href="مطاعم.html"><img src="القريه النجديه.jpg" alt="القرية النجدية"></a>
+            </div>
+            <div class="imgy">
+                <a href="فنادق ومنتجعات.html"><img src="سانت ريجيس.jpg" alt="سانت ريجيس"></a>
+            </div>
+            <div class="imgy">
+                <a href="أسواق.html"><img src="Al Faisaliyah Mall.jpeg" alt="الفيصلية"></a>
+            </div>
+        </div>
+    </main>
 
-    <div class="gallery">
-        <div class="imgy">
-            <a href="الثقافه والتراث.html"><img src="البجيري.jpg" alt="البجيري"></a>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h6>وصف الموقع</h6>
+            <p>موقع سياحي للرياض يجمع بين التاريخ العريق والحداثة العصرية في قلب المملكة العربية السعودية.</p>
         </div>
-        <div class="imgy">
-            <a href="الفعاليات والتجارب.html"><img src="البلفورد الوورد.jpg" alt="بوليفارد"></a>
-        </div>
-        <div class="imgy">
-            <a href="الفعاليات والتجارب.html"><img src="ونتر لاند.jpg" alt="ونتر لاند"></a>
-        </div>
-        <div class="imgy">
-            <a href="مطاعم.html"><img src="القريه النجديه.jpg" alt="القرية النجدية"></a>
-        </div>
-        <div class="imgy">
-            <a href="فنادق ومنتجعات.html"><img src="سانت ريجيس.jpg" alt="سانت ريجيس"></a>
-        </div>
-        <div class="imgy">
-            <a href="أسواق.html"><img src="Al Faisaliyah Mall.jpeg" alt="الفيصلية"></a>
-        </div>
-    </div>
-</main>
-
-<footer class="site-footer">
-    <div class="container">
-        <h6>وصف الموقع</h6>
-        <p>موقع سياحي يجمع بين عراقة الماضي وحداثة المستقبل في قلب الرياض.</p>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p style="margin-top:20px;">&copy; 2026 جميع الحقوق محفوظة - مشروع تخرج</p>
-    </div>
-</footer>
+        <p style="margin-top: 15px; font-size: 12px;">© 2026 جميع الحقوق محفوظة</p>
+    </footer>
 
-<script src="script.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </body>
 </html>
